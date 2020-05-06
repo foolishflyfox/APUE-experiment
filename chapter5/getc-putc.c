@@ -1,0 +1,14 @@
+// getc-putc.c
+#include <stdio.h>
+
+int main(){
+    int c;
+    while((c=getc(stdin))!=EOF){
+        if(putc(c, stdout)==EOF){
+            perror("putc error"); return 1;
+        }
+    }
+    if(ferror(stdin)){
+        perror("getc error"); return 1;
+    }
+}
