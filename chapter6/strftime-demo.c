@@ -1,4 +1,4 @@
-// strftime.c
+// strftime-demo.c
 #include <stdio.h>
 #include <time.h>
 
