@@ -7,7 +7,7 @@ int main(int argc, char* argv[]){
         fprintf(stderr, "Usage: %s <file>\n", argv[0]);
         return 1;
     }
-    if(execl(argv[1], "aaa", "bbb", "ccc", (char*)0)==-1){
+    if(execl(argv[1], "5", "6", "7", (char*)0)==-1){
         perror("execl error");
     }
 }
