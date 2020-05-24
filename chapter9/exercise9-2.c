@@ -4,8 +4,8 @@
 #include <sys/wait.h>
 
 void show_ids(const char* prefix){
-    // tpgrp 为拥有控制终端的进程组ID
-    fprintf(stderr, "%s: pid=%d, ppid=%d, pgid=%d, sid=%d, tpgrp=%d\n", 
+    // tcpgrp 为拥有控制终端的进程组ID
+    fprintf(stderr, "%s: pid=%d, ppid=%d, pgid=%d, sid=%d, tcpgrp=%d\n", 
             prefix, getpid(), getppid(), getpgrp(), 
             getsid(getpid()), tcgetpgrp(STDIN_FILENO));
 }
