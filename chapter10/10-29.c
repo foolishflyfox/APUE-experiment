@@ -39,12 +39,6 @@ static unsigned int sleep3(unsigned int seconds){
     /* reset signal mask, which unblocks SIGALRM */
     sigprocmask(SIG_SETMASK, &oldmask, NULL);
     return unslept;
-
-    if(signal(SIGALRM, sig_alarm)==SIG_ERR)
-        return(seconds);
-    alarm(seconds);
-    pause();
-    return (alarm(0));
 }
 
 int main(){
