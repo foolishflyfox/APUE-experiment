@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <fcntl.h>
+#include <time.h>
 
 #define BUFSIZE 511
 
@@ -17,11 +18,11 @@ int main(){
     for( ; ; ){
         if((n1 = read(fd1, buf1, BUFSIZ)) > 0){
             buf1[n1] = '\0';
-            printf("[t1.pip]:  %s\n", buf1);
+            printf("%ld[t1.pip]:  %s\n", time(NULL), buf1);
         }
         if((n2 = read(fd2, buf2, BUFSIZ)) > 0){
             buf2[n2] = '\0';
-            printf("[t2.pip]:  %s\n", buf2);
+            printf("%ld[t2.pip]:  %s\n", time(NULL), buf2);
         }
         usleep(50000);  // 每隔50ms轮询一次
     }
