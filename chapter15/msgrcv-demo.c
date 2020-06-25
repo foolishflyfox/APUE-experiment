@@ -1,5 +1,4 @@
 // msgrcv-demo.c
-// msgsnd-demo.c
 #include <sys/msg.h>
 #include <stdio.h>
 #include <stdlib.h>

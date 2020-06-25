@@ -1,4 +1,4 @@
-// semophore-demo.c
+// sem-demo.c
 #include <stdio.h>
 #include <sys/sem.h>
 #include <unistd.h>
@@ -19,7 +19,7 @@ int main(int argc, char* argv[]){
     key_t semkey = 0x123456;
     int id = semget(semkey, 1, 0666);
     if(id==-1){     // 如果信号量集不存在，则新建
-        printf("create semophore set\n");
+        printf("create semaphore set\n");
         // 该信号量集中仅有一个信号量
         id = semget(semkey, 1, 0666|IPC_CREAT);
         if(id < 0){ perror("semget error"); exit(1); }
