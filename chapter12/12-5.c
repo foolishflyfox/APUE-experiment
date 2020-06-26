@@ -1,4 +1,4 @@
-// 12-5-row1.c
+// 12-5.c
 #include <stdio.h>
 #include <pthread.h>
 #include <unistd.h>
