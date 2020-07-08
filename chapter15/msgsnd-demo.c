@@ -21,7 +21,7 @@ int main(int argc, char* argv[]){
     msgbuf buf;
     buf.mtype = atol(argv[1]);
     strncpy(buf.mtext, argv[2], 512);
-    if(-1==msgsnd(msgid, &buf, sizeof(msgbuf), 0)){
+    if(-1==msgsnd(msgid, &buf, strlen(argv[2])+1, 0)){
         perror("msgsnd error"); exit(1);
     }
 }
