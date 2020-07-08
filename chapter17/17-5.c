@@ -15,6 +15,7 @@ int main(void){
         perror("socket error"); exit(1);
     }
     size = offsetof(struct sockaddr_un, sun_path)+strlen(un.sun_path);
+    // bind 之后会创建套接字文件类型的文件：foo.socket
     if(bind(fd, (struct sockaddr*)&un, size) < 0){
         perror("bind error"); exit(1);
     }
