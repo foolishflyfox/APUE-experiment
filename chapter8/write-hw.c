@@ -10,5 +10,6 @@ int main(int argc, char* argv[]){
     int fd = atoi(argv[1]);
     if(write(fd, "hello,world\n", 12)==-1)
         perror("write error");
+    printf("dup(STDOUT_FILENO) = %d\n", dup(STDOUT_FILENO));
 }
 
